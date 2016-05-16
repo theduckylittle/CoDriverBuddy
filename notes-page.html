@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<title>Stage Notes Page Template</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!-- (c) 2016 Dan "Ducky" Little CC by SA -->
+</head>
+<body onload="expandNotes()">
+<div class="header">
+	<div class="event-info">
+		<label>EVENT</label><input id="event-name"><br>
+		<label>STAGE</label><input id="stage-name"<br>
+	</div>
+	<div class="page-info">
+		<input id="this-page"> / <input id="total-pages">
+	</div>
+</div>
+
+<div id="notes">
+	<div id="note" class="notes">
+			<input class="distance">
+			<input class="notes">
+	</div>
+</div>
+
+<div class="footer">
+	(c) 2016 Dan "Ducky" Little, CC by SA
+	<a href="https://github.com/theduckylittle/CoDriverBuddy"><img src="img/github.png"/></a>
+	<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="img/by-sa.png"></a>
+</div>
+
+<style type="text/css">
+body {
+	font-family: 'Roboto', sans-serif;
+	width: 8.5in;
+	height: 11in;
+	border: solid 1px #ccc;
+	margin: 0;
+	padding: 0;
+	padding-left: 1.25in;
+	padding-top: .75in;
+	padding-bottom: .5in;
+
+	position: absolute;
+
+	font-size: .25in;
+}
+
+@media print {
+	body {
+		border: none;
+	}
+}
+
+.footer {
+	text-align: center;
+	height: .26in;
+	font-size: 10pt;
+	width: 8in;
+	margin-top: .25in;
+}
+
+.header {
+	top: .5in;
+	width: 8in;
+	left: 1in;
+	clear: both;
+	height: 1in;
+}
+
+.header input {
+	height: .25in;
+	border: none;
+	border-bottom: solid 2px black;
+	background: none;
+	font-size: .20in;
+}
+
+.header .event-info {
+	float: left;
+}
+
+.header .event-info label {
+	display: inline-block;
+	width: .8in;
+}
+
+.header .event-info input {
+	width: 4in;
+	vertical-align: top;
+}
+
+.header .page-info {
+	float: right;
+}
+
+.header .page-info input {
+	width: .75in;
+	vertical-align: top;
+}
+
+.footer img {
+	height: 10pt;
+}
+
+
+.notes {
+	margin-bottom: .05in;
+}
+
+.notes input {
+	vertical-align: top;
+}
+
+.notes input.distance {
+	border: solid 1px black;
+	background: none;
+	width: .75in;
+	height: .33in;
+	font-size: .33in;
+}
+
+.notes input.notes {
+	height: 1in;
+	width: 7in;
+	font-size: .75in;
+
+	border: solid 1px black;
+	background: none;
+}
+</style>
+
+<script type="text/javascript">
+/** Takes #note and makes copies of it. 
+ */
+function expandNotes() {
+	var n_times = 8;
+	// dirty hack time!
+	var notes_html = document.getElementById('notes').innerHTML + '';
+
+	var notes = document.getElementById('notes');
+
+	var new_html = '';
+
+	for(var i = 0; i < n_times; i++) {
+		new_html += notes_html;
+	}
+	notes.innerHTML = new_html;
+}
+</script>
+
+</body>
+</html>
