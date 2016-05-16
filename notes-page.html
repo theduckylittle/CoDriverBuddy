@@ -122,9 +122,9 @@ body {
 }
 
 .notes input.notes {
-	height: 1in;
+	height: .75in;
 	width: 7in;
-	font-size: .75in;
+	font-size: 28pt;
 
 	border: solid 1px black;
 	background: none;
@@ -135,7 +135,7 @@ body {
 /** Takes #note and makes copies of it. 
  */
 function expandNotes() {
-	var n_times = 8;
+	var n_times = 10;
 	// dirty hack time!
 	var notes_html = document.getElementById('notes').innerHTML + '';
 
